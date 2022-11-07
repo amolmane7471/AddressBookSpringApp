@@ -6,9 +6,15 @@ import lombok.ToString;
 @ToString
 public class PersonDTO {
 
-    public String Name;
+    public String name;
     public String email;
     public String address;
-    public long contact;
+    public String contact;
+    public PersonDTO(String name, String email, String address, String contact) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.contact = contact;
+    }
 
 }
