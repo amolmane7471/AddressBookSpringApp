@@ -48,10 +48,11 @@ public class AddressBookController {
     /**
      * Updating AddressBook data using path variable and request body by put method
      */
-    @PutMapping(path = "/update")
-    public ResponseEntity<ResponseDTO> updateAddressBookData(@RequestBody PersonDTO personDTO) {
+    @PutMapping(path = "/update/{personId}")
+    public ResponseEntity<ResponseDTO> updateAddressBookData(@PathVariable("personId") int personId,
+                                                                @RequestBody PersonDTO personDTO) {
         AddressBookData addressBookData = null;
-        addressBookData = addressBookService.updateAddressBookData(personDTO);
+        addressBookData = addressBookService.updateAddressBookData(personId,personDTO);
         ResponseDTO respDTO = new ResponseDTO("Updated AddressBook Data Successfully! ", addressBookData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }

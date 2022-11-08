@@ -12,7 +12,7 @@ public interface IAddressBookService {
 
     AddressBookData createAddressBookData(PersonDTO personDTO);
 
-    AddressBookData updateAddressBookData(PersonDTO personDTO);
+    AddressBookData updateAddressBookData(int personId,PersonDTO personDTO);
 
     void deleteAddressBookData(int personId);
 }
