@@ -41,7 +41,7 @@ public class AddressBookService implements IAddressBookService {
 
     @Override
     public void deleteAddressBookData(int personId) {
-
+        addressBookDataList.remove(personId-1);
     }
 }
 
