@@ -1,0 +1,6 @@
+2022-11-08 12:31:08.720  INFO 5736 --- [restartedMain] c.b.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 18.0.2.1 on DESKTOP-4DL0KT5 with PID 5736 (C:\Users\manea\IdeaProjects\AddressBookApp\target\classes started by Phoenix in C:\Users\manea\IdeaProjects\AddressBookApp)
+2022-11-08 12:31:08.751 DEBUG 5736 --- [restartedMain] c.b.a.AddressBookAppApplication          : Running with Spring Boot v2.7.5, Spring v5.3.23
+2022-11-08 12:31:08.752  INFO 5736 --- [restartedMain] c.b.a.AddressBookAppApplication          : No active profile set, falling back to 1 default profile: "default"
+2022-11-08 12:31:14.041  WARN 5736 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-08 12:31:14.658  INFO 5736 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 6.736 seconds (JVM running for 8.429)
+2022-11-08 12:31:14.664  INFO 5736 --- [restartedMain] c.b.a.AddressBookAppApplication          : AddressBook App Started
