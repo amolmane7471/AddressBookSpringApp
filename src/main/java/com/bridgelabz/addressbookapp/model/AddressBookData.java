@@ -5,7 +5,8 @@ import com.bridgelabz.addressbookapp.dto.PersonDTO;
 
 public class AddressBookData {
     private int personId;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String address;
     private String contact;
@@ -13,7 +14,8 @@ public class AddressBookData {
     public AddressBookData(){ }
     public AddressBookData(int personId, PersonDTO personDTO) {
     this.personId = personId;
-    this.name = personDTO.name;
+    this.firstName = personDTO.firstName;
+    this.lastName = personDTO.lastName;
     this.email = personDTO.email;
     this.address = personDTO.address;
     this.contact = personDTO.contact;
@@ -28,12 +30,20 @@ public class AddressBookData {
         this.personId = personId;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
