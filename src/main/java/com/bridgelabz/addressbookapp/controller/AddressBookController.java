@@ -3,6 +3,7 @@ import com.bridgelabz.addressbookapp.dto.PersonDTO;
 import com.bridgelabz.addressbookapp.dto.ResponseDTO;
 import com.bridgelabz.addressbookapp.model.AddressBookData;
 import com.bridgelabz.addressbookapp.services.IAddressBookService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-
+@Slf4j
 @RestController
 @RequestMapping("/addressbook")
 public class AddressBookController {
@@ -40,7 +41,8 @@ public class AddressBookController {
      * Creating addressbook data using Body by Post mapping
      */
     @PostMapping(path = "/create")
-    public ResponseEntity<ResponseDTO> addAddressBookDAta(@Valid @RequestBody PersonDTO personDTO) {
+    public ResponseEntity<ResponseDTO> createAddressBookDAta(@Valid @RequestBody PersonDTO personDTO) {
+       log.debug("person DTO: "+personDTO.toString());
         AddressBookData addressBookData = null;
         addressBookData = addressBookService.createAddressBookData(personDTO);
         ResponseDTO respDTO = new ResponseDTO("Created AddressBook Data Successfully!", addressBookData);
@@ -52,7 +54,7 @@ public class AddressBookController {
      */
     @PutMapping(path = "/update/{personId}")
     public ResponseEntity<ResponseDTO> updateAddressBookData(@PathVariable("personId") int personId,
-                                                                @RequestBody PersonDTO personDTO) {
+                                                              @Valid  @RequestBody PersonDTO personDTO) {
         AddressBookData addressBookData = null;
         addressBookData = addressBookService.updateAddressBookData(personId,personDTO);
         ResponseDTO respDTO = new ResponseDTO("Updated AddressBook Data Successfully! ", addressBookData);
