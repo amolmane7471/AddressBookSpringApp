@@ -27,15 +27,15 @@ public @ToString class PersonDTO {
     @Pattern(regexp = "^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$", message = "Email is Not Valid")
     @NotNull(message = "Should Not be Empty")
     public String email;
-    public PersonDTO(String firstName,String lastName,String address,String city,String state,String pin, String contact,String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.state = state;
-        this.pin = pin;
-        this.address = address;
-        this.contact = contact;
-        this.email = email;
-    }
+//    public PersonDTO(String firstName,String lastName,String address,String city,String state,String pin, String contact,String email) {
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.city = city;
+//        this.state = state;
+//        this.pin = pin;
+//        this.address = address;
+//        this.contact = contact;
+//        this.email = email;
+//    }
 
 }
