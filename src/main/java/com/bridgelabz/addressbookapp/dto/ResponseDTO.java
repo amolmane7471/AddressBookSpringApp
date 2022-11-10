@@ -1,7 +1,7 @@
 package com.bridgelabz.addressbookapp.dto;
 
 import lombok.Data;
-/*
+/**
  *@Data is equivalent to using @getters @setters @RequiredArgsConstructor @ToString
  */
 public @Data class ResponseDTO {

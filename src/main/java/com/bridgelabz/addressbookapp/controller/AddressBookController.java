@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -35,10 +37,10 @@ public class AddressBookController {
     }
 
     /**
-     * Creating employee data using Body by Post mapping
+     * Creating addressbook data using Body by Post mapping
      */
     @PostMapping(path = "/create")
-    public ResponseEntity<ResponseDTO> addAddressBookDAta(@RequestBody PersonDTO personDTO) {
+    public ResponseEntity<ResponseDTO> addAddressBookDAta(@Valid @RequestBody PersonDTO personDTO) {
         AddressBookData addressBookData = null;
         addressBookData = addressBookService.createAddressBookData(personDTO);
         ResponseDTO respDTO = new ResponseDTO("Created AddressBook Data Successfully!", addressBookData);
