@@ -15,4 +15,7 @@ public interface IAddressBookService {
     AddressBookData updateAddressBookData(int personId,PersonDTO personDTO);
 
     void deleteAddressBookData(int personId);
+    List<AddressBookData> sortContactsBycity();
+
+    List<AddressBookData> sortContactsByState();
 }
