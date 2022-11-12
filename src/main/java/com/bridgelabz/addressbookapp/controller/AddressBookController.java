@@ -70,4 +70,25 @@ public class AddressBookController {
         ResponseDTO respDTO = new ResponseDTO("Delete AddressBook Data Successfully! ","deleted ID: "+personId);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+    /**
+     * return Response Entity of sorted cities
+     */
+    @GetMapping("/sortByCity")
+    public ResponseEntity<ResponseDTO> sortByCity(){
+        List<AddressBookData>  contactList = null;
+        contactList = addressBookService.sortContactsBycity();
+        ResponseDTO responseDTO = new ResponseDTO("Sorted Contacts Details",contactList);
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    }
+
+    /**
+     * return Response entity of sorted States
+     */
+    @GetMapping("/sortByState")
+    public ResponseEntity<ResponseDTO> sortByState(){
+        List<AddressBookData>  contactList = null;
+        contactList = addressBookService.sortContactsByState();
+        ResponseDTO responseDTO = new ResponseDTO("Sorted Contacts Details",contactList);
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    }
 }
